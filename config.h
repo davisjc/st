@@ -88,30 +88,31 @@ unsigned int alpha = 0xdd;
 /* Terminal colors (16 first used in escape sequence) */
 const char *colorname[] = {
 	/* 8 normal colors */
-	"black",
-	"red3",
-	"green3",
-	"yellow3",
-	"blue2",
-	"magenta3",
-	"cyan3",
-	"gray90",
+	"#000000",
+	"#f00c00",
+	"#00df00",
+	"#ffc000",
+	"#0080fe",
+	"#d30099",
+	"#00bca5",
+	"#c8c8c8",
 
 	/* 8 bright colors */
-	"gray50",
-	"red",
-	"green",
-	"yellow",
-	"#5c5cff",
-	"magenta",
-	"cyan",
-	"white",
+	"#777777",
+	"#f0453c",
+	"#38df38",
+	"#ffd040",
+	"#409ffe",
+	"#d335a7",
+	"#2fbcab",
+	"#ffffff",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
+	"#d9d9d9", /* 256 */
+	"#252525",  /* 257 */
+	"#c8c8c8",  /* 258 */
 };
 
 
@@ -119,8 +120,8 @@ const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 7;
-unsigned int defaultbg = 0;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 257;
 unsigned int defaultcs = 256;
 unsigned int defaultrcs = 257;
 
