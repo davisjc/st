@@ -170,7 +170,7 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 	/* JCD - dmenu of visible urls with alt + u, and open choice in Chrome. */
-	{ MODKEY, 'u', externalpipe, { .v = "xurls | dmenu -l 10 -i -fn 'hack:bold:size=12' | xargs -r google-chrome-stable" } },
+	{ MODKEY, 'u', externalpipe, { .v = "sed 's/ssh:\\/\\///g' | xurls | dmenu -l 10 -i -fn 'hack:bold:size=12' | xargs -r google-chrome-stable" } },
 };
 
 /*
