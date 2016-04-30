@@ -70,34 +70,32 @@ static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* JCD - Apply hbw's Aurora color scheme. */
 	/* 8 normal colors */
 	"#000000",
-	"#dd0000",
-	"#00bb00",
-	"#bbbb00",
-	"#4359fe",
-	"#bb00bb",
-	"#00bbbb",
-	"#bbbbbb",
+	"#f00c00",
+	"#00df00",
+	"#ffc000",
+	"#0080fe",
+	"#d30099",
+	"#00bca5",
+	"#c8c8c8",
 
 	/* 8 bright colors */
 	"#777777",
-	"#ff5555",
-	"#55ff55",
-	"#ffff55",
-	"#5482ff",
-	"#ff55ff",
-	"#55ffff",
+	"#f0453c",
+	"#38df38",
+	"#ffd040",
+	"#409ffe",
+	"#d335a7",
+	"#2fbcab",
 	"#ffffff",
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#002b36",  /* Aurora background */
-	"#bcbcbc",  /* Aurora foreground */
-	/* JCD - Finish applying hbw's Aurora color scheme. */
+	"#d9d9d9", /* 256 */
+	"#252525",  /* 257 */
+	"#c8c8c8",  /* 258 */
 };
 
 
@@ -105,8 +103,8 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-static unsigned int defaultfg = 258; /* JCD - hbw's Aurora colors. */
-static unsigned int defaultbg = 257; /* JCD - hbw's Aurora colors. */
+static unsigned int defaultfg = 258;
+static unsigned int defaultbg = 257;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
