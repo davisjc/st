@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char font[] = "hack:size=12:antialias=true:autohint=true";
+static char font[] = "hack:size=11:antialias=true:autohint=true";
 static int borderpx = 2;
 #define histsize 2000
 
@@ -168,7 +168,7 @@ static Shortcut shortcuts[] = {
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 	/* JCD - dmenu of visible urls with alt + u, and open choice in Chrome. */
-	{ MODKEY, 'u', externalpipe, { .v = "sed 's/ssh:\\/\\///g' | xurls | dmenu -l 10 -i -fn 'hack:bold:size=12' | xargs -r google-chrome-stable" } },
+	{ MODKEY, 'u', externalpipe, { .v = "sed 's/ssh:\\/\\///g' | xurls | dmenu -l 10 -i -fn 'hack:bold:size=11' | xargs -r google-chrome-stable" } },
 };
 
 /*
