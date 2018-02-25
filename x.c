@@ -248,6 +248,7 @@ bpress(XEvent *e)
 {
 	struct timespec now;
 	MouseShortcut *ms;
+	MouseKey *mk;
 
 	if (IS_SET(MODE_MOUSE) && !(e->xbutton.state & forceselmod)) {
 		mousereport(e);
@@ -258,6 +259,14 @@ bpress(XEvent *e)
 		if (e->xbutton.button == ms->b
 				&& match(ms->mask, e->xbutton.state)) {
 			ttysend(ms->s, strlen(ms->s));
+			return;
+		}
+	}
+
+	for (mk = mkeys; mk < mkeys + mkeyslen; mk++) {
+		if (e->xbutton.button == mk->b
+				&& match(mk->mask, e->xbutton.state)) {
+			mk->func(&mk->arg);
 			return;
 		}
 	}
