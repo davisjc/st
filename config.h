@@ -172,7 +172,10 @@ MouseKey mkeys[] = {
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
-
+static char *openurl[] = { "/bin/sh", "-c", "sed 's/ssh:\\/\\///g' | xurls | "
+                           "dmenu -l 10 -i -fn 'hack:bold:size=12' | "
+                           "xargs -r google-chrome-stable", "externalpipe",
+                           NULL, NULL };
 Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
 	{ XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
@@ -189,6 +192,7 @@ Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
 	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ MODKEY,               'u',            externalpipe,   { .v = openurl } },
 };
 
 /*
